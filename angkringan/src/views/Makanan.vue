@@ -1,14 +1,9 @@
 <template>
-
   <div>
     <v-main>
       <v-container fluid>
         <v-row dense>
-          <v-col
-            v-for="makanan in makanans"
-            :key="makanan.title"
-            :cols="makanan.flex"
-          >
+          <v-col v-for="makanan in makanans" :key="makanan.title" :cols="makanan.flex">
             <v-card>
               <v-img
                 :src="makanan.src"
@@ -45,29 +40,30 @@ export default {
           title: "Nasi Goreng",
           src:
             "https://images.unsplash.com/photo-1581184953963-d15972933db1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=574&q=80",
-          flex: 3,
+          harga: 20000,
+          flex: 3
         },
         {
           title: "Mie Goreng",
           src:
             "https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=597&q=80",
-          flex: 3,
+          flex: 3
         },
         {
           title: "Indomie Kuah",
           src:
             "https://images.unsplash.com/photo-1598977700511-fe0707d5eae6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-          flex: 3,
+          flex: 3
         },
         {
           title: "Nasi Kucing",
           src:
             "https://images.unsplash.com/photo-1570275239925-4af0aa93a0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
-          flex: 3,
-        },
-      ],
+          flex: 3
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 

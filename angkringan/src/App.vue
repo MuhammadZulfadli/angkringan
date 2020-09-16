@@ -6,11 +6,13 @@
         <div>
           <router-view></router-view>
         </div>
-        <div><p>asdasdada</p></div>
+        <div>
+          <Cart />
+        </div>
       </div>
       <!-- <v-container fluid>
       </v-container>
-      <router-view></router-view> -->
+      <router-view></router-view>-->
     </v-main>
     <Footer />
   </v-app>
@@ -19,6 +21,7 @@
 <script>
 import Appbar from "./components/Appbar";
 import Footer from "./views/Footer";
+import Cart from "./components/Cart";
 
 export default {
   name: "App",
@@ -26,11 +29,12 @@ export default {
   components: {
     Appbar,
     Footer,
+    Cart
   },
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
 <style>
