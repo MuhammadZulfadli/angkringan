@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-card height="150">
+    <v-card height="20px">
       <v-footer absolute class="font-weight-medium">
-        <v-col class="text-center" cols="12">
+        <v-col class="text-center" cols="12" md="3" xs="6">
           <v-icon>mdi-copyright</v-icon>
           {{ new Date().getFullYear() }} —
           <strong>Angkringan 4.0</strong>

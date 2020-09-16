@@ -2,14 +2,16 @@
   <v-app class="grey lighten-4">
     <Appbar />
     <v-main>
-      <div class="Grd">
-        <div>
-          <router-view></router-view>
+      <v-container fluid>
+        <div class="Grd">
+          <div>
+            <router-view></router-view>
+          </div>
+          <div>
+            <Cart />
+          </div>
         </div>
-        <div>
-          <Cart />
-        </div>
-      </div>
+      </v-container>
       <!-- <v-container fluid>
       </v-container>
       <router-view></router-view>-->
