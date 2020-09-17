@@ -3,7 +3,7 @@
     <v-main>
       <v-container fluid>
         <v-row dense>
-          <v-col v-for="makanan in makanans" :key="makanan.id" cols="12" md="6">
+          <v-col v-for="makanan in makanans" :key="makanan.id" cols="12" md="3">
             <v-card>
               <v-img
                 :src="makanan.src"
@@ -18,9 +18,9 @@
                 <v-spacer></v-spacer>
 
                 <v-card-title>Rp. {{makanan.harga}}</v-card-title>
-                <v-btn icon class="mx-6">
-                  Beli
-                  <v-icon>mdi-cart</v-icon>
+                <v-btn flat class="mx-6" color="primary">
+                  Tambah
+                  <!-- <v-icon>mdi-cart</v-icon> -->
                 </v-btn>
               </v-card-actions>
             </v-card>

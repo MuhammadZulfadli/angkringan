@@ -105,6 +105,8 @@ export default new Vuex.Store({
           item: "kapal Api",
           harga: 3500,
           deskripsi: "kapal api sasetan",
+          src:
+            "https://images.unsplash.com/photo-1521302080334-4bebac2763a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         },
         {
           id: 314,
@@ -200,7 +202,7 @@ export default new Vuex.Store({
         },
       ],
     },
-    carts: [],
+    card: [],
   },
 
   getters: {
@@ -210,8 +212,8 @@ export default new Vuex.Store({
     getDataM: (state) => {
       return state.products.minuman;
     },
-    carts: (state) => {
-      return state.carts;
+    card: (state) => {
+      return state.card;
     },
   },
   actions: {

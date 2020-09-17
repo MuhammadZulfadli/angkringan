@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="it in carts" :key="it.id">
+    <div v-for="it in card" :key="it.id">
       <v-card class="mx-auto" max-width="544" outlined>
         <v-list-item three-line>
           <v-list-item-content>
@@ -47,8 +47,6 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      fixedHeader: true,
-      dense: true
       // item: 1,
       // items: [
       //   {
@@ -67,7 +65,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["carts"])
+    ...mapGetters(["card"]),
+    jumlah() {
+      return this.card.length;
+    }
   },
   methods: {}
 };

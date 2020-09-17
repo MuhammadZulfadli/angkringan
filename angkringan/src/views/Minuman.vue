@@ -18,10 +18,7 @@
                 <v-spacer></v-spacer>
 
                 <v-card-title>Rp. {{mn.harga}}</v-card-title>
-                <v-btn flat @click="addItemToCard(mn)">
-                  Tambah
-                  <!-- <v-icon>mdi-cart</v-icon> -->
-                </v-btn>
+                <v-btn flat @click="addItemToCard(mn)" color="primary">Tambah</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -100,10 +97,16 @@ export default {
   computed: {
     minumans() {
       return this.$store.getters.getDataM;
+    },
+    cart() {
+      return this.$store.getters.card;
     }
   },
   methods: {
     ...mapActions(["addItemToCard"])
+  },
+  mounted() {
+    console.log(this.cart);
   }
 };
 </script>

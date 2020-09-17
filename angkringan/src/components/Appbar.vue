@@ -10,6 +10,7 @@
         <v-spacer></v-spacer>
         <v-btn icon flat color="grey" class="mx-10" to="/cart">
           <v-icon right>mdi-shopping</v-icon>
+          <span>{{jumlah}}</span>
         </v-btn>
       </v-toolbar>
 
@@ -34,6 +35,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -44,8 +46,15 @@ export default {
         { icon: "mdi-coffee", text: "Minuman", route: "/minuman" }
       ]
     };
+  },
+  computed: {
+    ...mapGetters(["card"]),
+    jumlah() {
+      return this.card.length;
+    }
   }
 };
 </script>
+
 
 <style></style>
