@@ -5,9 +5,12 @@
         <v-app-bar-nav-icon class="grey--text" @click="drawer = true"></v-app-bar-nav-icon>
         <v-toolbar-title class="text-uppercase grey--text">
           <span class="font-weight-light">Angkringan</span>
-          <span>4.0</span>
+          <strong>4.0</strong>
         </v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn icon flat color="grey" class="mx-10" to="/cart">
+          <v-icon right>mdi-shopping</v-icon>
+        </v-btn>
       </v-toolbar>
 
       <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -23,6 +26,10 @@
         </v-list>
       </v-navigation-drawer>
     </nav>
+
+    <!-- <v-tabs>
+      <v-tab v-for="link in links" :key="link.txt" :to="link.route">{{link.text}}</v-tab>
+    </v-tabs>-->
   </div>
 </template>
 

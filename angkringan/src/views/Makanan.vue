@@ -3,7 +3,7 @@
     <v-main>
       <v-container fluid>
         <v-row dense>
-          <v-col v-for="makanan in makanans" :key="makanan.title" cols="12" md="6">
+          <v-col v-for="makanan in makanans" :key="makanan.id" cols="12" md="6">
             <v-card>
               <v-img
                 :src="makanan.src"
@@ -11,13 +11,13 @@
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="200px"
               >
-                <v-card-title v-text="makanan.title"></v-card-title>
+                <v-card-title>{{makanan.item}}</v-card-title>
               </v-img>
 
               <v-card-actions>
                 <v-spacer></v-spacer>
 
-                <v-card-title v-text="makanan.price"></v-card-title>
+                <v-card-title>Rp. {{makanan.harga}}</v-card-title>
                 <v-btn icon class="mx-6">
                   Beli
                   <v-icon>mdi-cart</v-icon>
@@ -37,37 +37,42 @@ export default {
   components: {},
   data() {
     return {
-      makanans: [
-        {
-          title: "Nasi Goreng",
-          src:
-            "https://images.unsplash.com/photo-1581184953963-d15972933db1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=574&q=80",
-          price: 20000,
-          flex: 3
-        },
-        {
-          title: "Mie Goreng",
-          src:
-            "https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=597&q=80",
-          price: 20000,
-          flex: 3
-        },
-        {
-          title: "Indomie Kuah",
-          src:
-            "https://images.unsplash.com/photo-1598977700511-fe0707d5eae6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-          price: 20000,
-          flex: 3
-        },
-        {
-          title: "Nasi Kucing",
-          src:
-            "https://images.unsplash.com/photo-1570275239925-4af0aa93a0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
-          price: 20000,
-          flex: 3
-        }
-      ]
+      // makanans: [
+      //   {
+      //     title: "Nasi Goreng",
+      //     src:
+      //       "https://images.unsplash.com/photo-1581184953963-d15972933db1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=574&q=80",
+      //     price: 20000,
+      //     flex: 3
+      //   },
+      //   {
+      //     title: "Mie Goreng",
+      //     src:
+      //       "https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=597&q=80",
+      //     price: 20000,
+      //     flex: 3
+      //   },
+      //   {
+      //     title: "Indomie Kuah",
+      //     src:
+      //       "https://images.unsplash.com/photo-1598977700511-fe0707d5eae6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+      //     price: 20000,
+      //     flex: 3
+      //   },
+      //   {
+      //     title: "Nasi Kucing",
+      //     src:
+      //       "https://images.unsplash.com/photo-1570275239925-4af0aa93a0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
+      //     price: 20000,
+      //     flex: 3
+      //   }
+      // ]
     };
+  },
+  computed: {
+    makanans() {
+      return this.$store.getters.getData;
+    }
   }
 };
 </script>

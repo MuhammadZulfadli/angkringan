@@ -29,15 +29,23 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-
-      import(/* webpackChunkName: "about" */ "../views/Makanan.vue")
+      import(/* webpackChunkName: "about" */ "../views/Makanan.vue"),
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/Cart.vue"),
   },
   {
     path: "/snack",
     name: "snack",
-    component: () => import(/* webpackChunkName: "snack" */ "../components/HelloWorld.vue")
-  }
-
+    component: () =>
+      import(/* webpackChunkName: "snack" */ "../components/HelloWorld.vue"),
+  },
 ];
 
 const router = new VueRouter({

@@ -2,7 +2,7 @@
   <div>
     <v-container class="my-5">
       <v-row>
-        <v-col v-for="card in cards" :key="card.title" cols="12" md="4">
+        <v-col v-for="card in minuman" :key="card.id" cols="12" md="4" sm="2">
           <v-card class="pa-2" outlined tile>
             <v-img
               :src="card.src"
@@ -10,12 +10,37 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
-              <v-card-title v-text="card.title"></v-card-title>
+              <v-card-title>{{card.item}}</v-card-title>
             </v-img>
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-card-title v-text="card.price"></v-card-title>
+              <v-card-title>Rp. {{card.harga}}</v-card-title>
+              <v-btn icon class="mx-6">
+                Beli
+                <v-icon>mdi-cart</v-icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container class="my-5">
+      <v-row>
+        <v-col v-for="card in makanan" :key="card.id" cols="12" md="4" sm="2">
+          <v-card class="pa-2" outlined tile>
+            <v-img
+              :src="card.src"
+              class="white--text align-end"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="200px"
+            >
+              <v-card-title>{{card.item}}</v-card-title>
+            </v-img>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-card-title>Rp. {{card.harga}}</v-card-title>
               <v-btn icon class="mx-6">
                 Beli
                 <v-icon>mdi-cart</v-icon>
@@ -121,6 +146,14 @@ export default {
       ]
     };
   },
-  components: {}
+  components: {},
+  computed: {
+    minuman() {
+      return this.$store.getters.getDataM;
+    },
+    makanan() {
+      return this.$store.getters.getData;
+    }
+  }
 };
 </script>
