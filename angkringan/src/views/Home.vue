@@ -2,7 +2,7 @@
   <div>
     <v-container class="my-5">
       <v-row>
-        <v-col v-for="card in minuman" :key="card.id" cols="12" md="4" sm="2">
+        <v-col v-for="card in minuman" :key="card.id" cols="12" md="4" sm="6">
           <v-card class="pa-2" outlined tile>
             <v-img
               :src="card.src"
@@ -10,14 +10,14 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
-              <v-card-title>{{card.item}}</v-card-title>
+              <v-card-title>{{ card.item }}</v-card-title>
             </v-img>
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-card-title>Rp. {{card.harga}}</v-card-title>
-              <v-btn flat class="mx-6" color="primary">
-                Tambah
+              <v-card-title>Rp. {{ card.harga }}</v-card-title>
+              <v-btn class="mx-6" color="primary">
+                Add to cart
                 <!-- <v-icon>mdi-cart</v-icon> -->
               </v-btn>
             </v-card-actions>
@@ -27,7 +27,7 @@
     </v-container>
     <v-container class="my-5">
       <v-row>
-        <v-col v-for="card in makanan" :key="card.id" cols="12" md="4" sm="2">
+        <v-col v-for="card in makanan" :key="card.id" cols="12" md="4" sm="6">
           <v-card class="pa-2" outlined tile>
             <v-img
               :src="card.src"
@@ -35,13 +35,13 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
-              <v-card-title>{{card.item}}</v-card-title>
+              <v-card-title>{{ card.item }}</v-card-title>
             </v-img>
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-card-title>Rp. {{card.harga}}</v-card-title>
-              <v-btn flat class="mx-6" color="primary">
+              <v-card-title>Rp. {{ card.harga }}</v-card-title>
+              <v-btn class="mx-6" color="primary">
                 Tambah
                 <!-- <v-icon>mdi-cart</v-icon> -->
               </v-btn>
@@ -153,7 +153,7 @@ export default {
     },
     makanan() {
       return this.$store.getters.getData;
-    }
-  }
+    },
+  },
 };
 </script>

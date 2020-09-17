@@ -11,15 +11,15 @@
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="200px"
               >
-                <v-card-title>{{makanan.item}}</v-card-title>
+                <v-card-title>{{ makanan.item }}</v-card-title>
               </v-img>
 
               <v-card-actions>
                 <v-spacer></v-spacer>
 
-                <v-card-title>Rp. {{makanan.harga}}</v-card-title>
+                <v-card-title>Rp. {{ makanan.harga }}</v-card-title>
                 <v-btn flat class="mx-6" color="primary">
-                  Tambah
+                  Add to cart
                   <!-- <v-icon>mdi-cart</v-icon> -->
                 </v-btn>
               </v-card-actions>
@@ -72,8 +72,8 @@ export default {
   computed: {
     makanans() {
       return this.$store.getters.getData;
-    }
-  }
+    },
+  },
 };
 </script>
 

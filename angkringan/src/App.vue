@@ -21,13 +21,13 @@ export default {
 
   components: {
     Appbar,
-    Footer
+    Footer,
     // Cart
   },
 
   data: () => ({
     //
-  })
+  }),
 };
 </script>
 <style>
