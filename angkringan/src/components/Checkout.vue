@@ -3,10 +3,10 @@
     <v-row justify="center">
       <v-dialog v-model="dialog" persistent max-width="500">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn color="primary" dark v-bind="attrs" v-on="on">Checkout</v-btn>
+          <v-btn color="primary" dark v-bind="attrs" v-on="on">Pesan</v-btn>
         </template>
         <v-card>
-          <v-card-title class="headline">Your Transaction</v-card-title>
+          <v-card-title class="headline">Transaksi Kamu</v-card-title>
           <v-simple-table height="300px">
             <template v-slot:default>
               <thead>
@@ -14,6 +14,7 @@
                   <th class="text-left">Item</th>
                   <th class="text-left">Jumlah</th>
                   <th class="text-left">Harga Satuan</th>
+                  <th class="text-left">Harga Total</th>
                 </tr>
               </thead>
               <tbody>
@@ -21,10 +22,12 @@
                   <td>{{ item.item }}</td>
                   <td>{{ item.qty }}</td>
                   <td>Rp. {{ item.harga }}</td>
+                  <td>Rp. {{ item.qty*item.harga }}</td>
                 </tr>
                 <tr>
                   <td>Total</td>
                   <td>{{jumlahPesanan}}</td>
+                  <td></td>
                   <td>Rp. {{total}}</td>
                 </tr>
               </tbody>
@@ -33,8 +36,13 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
-            <v-btn color="green darken-1" text @click="dialog = false">Continue</v-btn>
+            <v-btn color="green darken-1" text @click="dialog = false">Batal</v-btn>
+            <v-btn
+              color="green darken-1"
+              text
+              @click="dialog = false"
+              to="/transaction_success"
+            >Lanjutkan</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>

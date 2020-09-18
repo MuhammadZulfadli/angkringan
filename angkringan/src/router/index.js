@@ -41,10 +41,12 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../components/Cart.vue"),
   },
   {
-    path: "/snack",
-    name: "snack",
+    path: "/transaction_success",
+    name: "Transaction_Success",
     component: () =>
-      import(/* webpackChunkName: "snack" */ "../components/HelloWorld.vue"),
+      import(
+        /* webpackChunkName: "snack" */ "../components/FinishedTransaction.vue"
+      ),
   },
 ];
 
