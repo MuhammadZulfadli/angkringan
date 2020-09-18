@@ -19,23 +19,12 @@
 
                 <v-card-title>Rp. {{ mn.harga }}</v-card-title>
                 <!-- Button add -->
-                <v-btn
-                  @click="addItemToCard(mn), (snackbar = true)"
-                  color="primary"
-                  >Add to cart
-                </v-btn>
+                <v-btn @click="addItemToCard(mn), (snackbar = true)" color="primary">Add to cart</v-btn>
                 <!-- Snackbar Notification -->
                 <v-snackbar v-model="snackbar" :timeout="timeout">
                   {{ text }}
                   <template v-slot:action="{ attrs }">
-                    <v-btn
-                      color="red darken-2"
-                      text
-                      v-bind="attrs"
-                      @click="snackbar = false"
-                    >
-                      Close
-                    </v-btn>
+                    <v-btn color="red darken-2" text v-bind="attrs" @click="snackbar = false">Close</v-btn>
                   </template>
                 </v-snackbar>
               </v-card-actions>
@@ -55,7 +44,7 @@ export default {
     return {
       snackbar: false,
       text: "Yeay! Success add to cart",
-      timeout: 2000,
+      timeout: 2000
     };
   },
   computed: {
@@ -64,14 +53,14 @@ export default {
     },
     cart() {
       return this.$store.getters.card;
-    },
+    }
   },
   methods: {
-    ...mapActions(["addItemToCard"]),
+    ...mapActions(["addItemToCard"])
   },
   mounted() {
     console.log(this.cart);
-  },
+  }
 };
 </script>
 

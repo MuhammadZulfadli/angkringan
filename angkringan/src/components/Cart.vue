@@ -5,9 +5,11 @@
         <v-list-item three-line>
           <v-list-item-content>
             <div class="overline mb-4">Cart</div>
-            <v-list-item-title class="headline mb-1">{{
+            <v-list-item-title class="headline mb-1">
+              {{
               it.item
-            }}</v-list-item-title>
+              }}
+            </v-list-item-title>
             <v-list-item-subtitle>Rp. {{ it.harga }}</v-list-item-subtitle>
           </v-list-item-content>
 
@@ -23,14 +25,14 @@
         </v-list-item>
 
         <v-card-actions>
-          <v-btn icon>
+          <v-btn icon @click="reduceList(it.id)">
             <v-icon>mdi-minus-box-outline</v-icon>
           </v-btn>
-          <span>0</span>
-          <v-btn icon>
+          <span>{{it.qty}}</span>
+          <v-btn icon @click="addList(it.id)">
             <v-icon>mdi-plus-box</v-icon>
           </v-btn>
-          <v-btn icon>
+          <v-btn icon @click="removeList(it.id)">
             <v-icon>mdi-trash-can-outline</v-icon>
           </v-btn>
         </v-card-actions>
@@ -38,14 +40,15 @@
     </div>
 
     <v-card class="mx-auto" max-width="544" outlined>
-      <v-card-title>Total :</v-card-title>
+      <v-card-title>Jumlah Pesanan : {{jumlahPesanan}}</v-card-title>
+      <v-card-title>Total: Rp. {{total}}</v-card-title>
       <v-btn class="ma-2" tile color="primary" dark rounded>Checkout</v-btn>
     </v-card>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {};
@@ -55,8 +58,16 @@ export default {
     jumlah() {
       return this.card.length;
     },
+    total() {
+      return this.card.reduce((a, b) => a + b.qty * b.harga, 0);
+    },
+    jumlahPesanan() {
+      return this.card.reduce((a, b) => a + b.qty, 0);
+    }
   },
-  methods: {},
+  methods: {
+    ...mapActions(["addList", "reduceList", "removeList"])
+  }
 };
 </script>
 
