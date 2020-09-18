@@ -93,7 +93,7 @@ export default new Vuex.Store({
           harga: 3500,
           deskripsi: "Kerupuk mlarat dan sambal",
           src:
-            "https://www.rsnirmalasuri.com/wp-content/uploads/2020/07/kerupuk-2.jpg",
+            "https://tempatwisataindonesia.id/wp-content/uploads/2017/01/Kerupuk-Melarat-1.jpg",
         },
       ],
 
