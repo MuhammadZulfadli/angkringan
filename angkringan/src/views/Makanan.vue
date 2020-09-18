@@ -10,6 +10,7 @@
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="200px"
+                @click="addItemToCard(makanan), (snackbar = true)"
               >
                 <v-card-title>{{ makanan.item }}</v-card-title>
               </v-img>
@@ -24,7 +25,7 @@
                   class="mx-6"
                   color="primary"
                 >
-                  Add to cart
+                  Pesan
                   <!-- <v-icon>mdi-cart</v-icon> -->
                 </v-btn>
                 <v-snackbar v-model="snackbar" :timeout="timeout">

@@ -10,6 +10,7 @@
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="200px"
+                @click="addItemToCard(mn), (snackbar = true)"
               >
                 <v-card-title>{{ mn.item }}</v-card-title>
               </v-img>
@@ -19,7 +20,7 @@
 
                 <v-card-title>Rp. {{ mn.harga }}</v-card-title>
                 <!-- Button add -->
-                <v-btn @click="addItemToCard(mn), (snackbar = true)" color="primary">Add to cart</v-btn>
+                <v-btn @click="addItemToCard(mn), (snackbar = true)" color="primary">Pesan</v-btn>
                 <!-- Snackbar Notification -->
                 <v-snackbar v-model="snackbar" :timeout="timeout">
                   {{ text }}
