@@ -42,16 +42,21 @@
     <v-card class="mx-auto" max-width="544" outlined>
       <v-card-title>Jumlah Pesanan : {{jumlahPesanan}}</v-card-title>
       <v-card-title>Total: Rp. {{total}}</v-card-title>
-      <v-btn class="ma-2" tile color="primary" dark rounded>Checkout</v-btn>
+      <!-- <v-btn class="ma-2" tile color="primary" dark rounded>Checkout</v-btn> -->
     </v-card>
+    <Checkout />
   </div>
 </template>
 
 <script>
+import Checkout from "@/components/Checkout";
 import { mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {};
+  },
+  components: {
+    Checkout
   },
   computed: {
     ...mapGetters(["card"]),

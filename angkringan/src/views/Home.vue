@@ -41,10 +41,11 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-card-title>Rp. {{ card.harga }}</v-card-title>
-              <v-btn @click="addItemToCard(card), (snackbar = true)" class="mx-6" color="primary">
-                Add to cart
-                <!-- <v-icon>mdi-cart</v-icon> -->
-              </v-btn>
+              <v-btn
+                @click="addItemToCard(card), (snackbar = true)"
+                class="mx-6"
+                color="primary"
+              >Add to cart</v-btn>
               <v-snackbar v-model="snackbar" :timeout="timeout">
                 {{ text }}
                 <template v-slot:action="{ attrs }">
