@@ -7,6 +7,9 @@
         <strong>4.0</strong>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+      <!-- Search -->
+      <v-text-field class="mx-4" flat hide-details label="Search" solo-inverted></v-text-field>
+      <!-- Cart icon -->
       <v-btn icon color="grey" class="mx-10" to="/cart">
         <v-icon right>mdi-shopping</v-icon>
         <v-badge color="primary" :content="jumlah"></v-badge>
