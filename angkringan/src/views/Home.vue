@@ -22,8 +22,7 @@
                 @click="addItemToCard(card), (snackbar = true)"
                 class="mx-6"
                 color="primary"
-                >Pesan</v-btn
-              >
+              >Pesan</v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
@@ -33,12 +32,7 @@
     <v-container class="my-5">
       <v-row>
         <v-col v-for="card in makanan" :key="card.id" cols="12" md="4" sm="6">
-          <v-card
-            @click="addItemToCard(card), (snackbar = true)"
-            class="pa-2"
-            outlined
-            tile
-          >
+          <v-card @click="addItemToCard(card), (snackbar = true)" class="pa-2" outlined tile>
             <v-img
               :src="card.src"
               class="white--text align-end"
@@ -55,18 +49,11 @@
                 @click="addItemToCard(card), (snackbar = true)"
                 class="mx-6"
                 color="primary"
-                >Pesan</v-btn
-              >
+              >Pesan</v-btn>
               <v-snackbar v-model="snackbar" :timeout="timeout">
                 {{ text }}
                 <template v-slot:action="{ attrs }">
-                  <v-btn
-                    color="red darken-2"
-                    text
-                    v-bind="attrs"
-                    @click="snackbar = false"
-                    >Close</v-btn
-                  >
+                  <v-btn color="red darken-2" text v-bind="attrs" @click="snackbar = false">Close</v-btn>
                 </template>
               </v-snackbar>
             </v-card-actions>
