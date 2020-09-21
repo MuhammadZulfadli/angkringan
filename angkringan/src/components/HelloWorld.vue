@@ -136,6 +136,6 @@ export default {
     //     href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
     //   }
     // ]
-  }),
+  })
 };
 </script>

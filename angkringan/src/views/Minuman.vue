@@ -3,7 +3,7 @@
     <v-main>
       <v-container fluid>
         <v-row dense>
-          <v-col v-for="mn in minumans" :key="mn.id" cols="12" md="4">
+          <v-col v-for="mn in minumans" :key="mn.id" cols="12" md="3">
             <v-card>
               <v-img
                 :src="mn.src"
@@ -20,12 +20,22 @@
 
                 <v-card-title>Rp. {{ mn.harga }}</v-card-title>
                 <!-- Button add -->
-                <v-btn @click="addItemToCard(mn), (snackbar = true)" color="primary">Pesan</v-btn>
+                <v-btn
+                  @click="addItemToCard(mn), (snackbar = true)"
+                  color="primary"
+                  >Pesan</v-btn
+                >
                 <!-- Snackbar Notification -->
                 <v-snackbar v-model="snackbar" :timeout="timeout">
                   {{ text }}
                   <template v-slot:action="{ attrs }">
-                    <v-btn color="red darken-2" text v-bind="attrs" @click="snackbar = false">Close</v-btn>
+                    <v-btn
+                      color="red darken-2"
+                      text
+                      v-bind="attrs"
+                      @click="snackbar = false"
+                      >Close</v-btn
+                    >
                   </template>
                 </v-snackbar>
               </v-card-actions>

@@ -21,7 +21,6 @@
                 <v-card-title>Rp. {{ makanan.harga }}</v-card-title>
                 <v-btn
                   @click="addItemToCard(makanan), (snackbar = true)"
-                  flat
                   class="mx-6"
                   color="primary"
                 >
@@ -31,7 +30,13 @@
                 <v-snackbar v-model="snackbar" :timeout="timeout">
                   {{ text }}
                   <template v-slot:action="{ attrs }">
-                    <v-btn color="red darken-2" text v-bind="attrs" @click="snackbar = false">Close</v-btn>
+                    <v-btn
+                      color="red darken-2"
+                      text
+                      v-bind="attrs"
+                      @click="snackbar = false"
+                      >Close</v-btn
+                    >
                   </template>
                 </v-snackbar>
               </v-card-actions>
