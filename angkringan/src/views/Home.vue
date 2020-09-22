@@ -50,7 +50,7 @@
                 class="mx-6"
                 color="primary"
               >Pesan</v-btn>
-              <v-snackbar v-model="snackbar" :timeout="timeout">
+              <v-snackbar v-model="snackbar" :timeout="timeout" :top="y === 'top'">
                 {{ text }}
                 <template v-slot:action="{ attrs }">
                   <v-btn color="red darken-2" text v-bind="attrs" @click="snackbar = false">Close</v-btn>
@@ -65,6 +65,7 @@
 </template>
 
 <script>
+// import Alert from "@/components/Snackbar";
 import { mapActions } from "vuex";
 export default {
   name: "Home",
@@ -72,7 +73,8 @@ export default {
     return {
       snackbar: false,
       text: "Yeay! Success add to cart",
-      timeout: 2000
+      timeout: 1000,
+      y: "top"
     };
   },
   components: {},

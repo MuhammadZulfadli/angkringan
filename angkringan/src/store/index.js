@@ -13,7 +13,7 @@ export default new Vuex.Store({
           harga: 10000,
           deskripsi: "mie ayam dengan resep turnun temurun",
           src:
-            "https://cdn.pixabay.com/photo/2020/07/07/04/54/tom-yum-noodle-5379242_960_720.jpg"
+            "https://cdn.pixabay.com/photo/2020/07/07/04/54/tom-yum-noodle-5379242_960_720.jpg",
         },
         {
           id: 123,
@@ -21,7 +21,7 @@ export default new Vuex.Store({
           harga: 2500,
           deskripsi: "nasi dengan lauk ikan tongkol peda",
           src:
-            "https://cdn.idntimes.com/content-images/community/2019/12/155271332658394-14750db9-77f5-4ba3-a5bd-1f6690b67e3a-71e3846eed74138dcdeb9cb5c08ff736.png"
+            "https://cdn.idntimes.com/content-images/community/2019/12/155271332658394-14750db9-77f5-4ba3-a5bd-1f6690b67e3a-71e3846eed74138dcdeb9cb5c08ff736.png",
         },
         {
           id: 125,
@@ -29,7 +29,7 @@ export default new Vuex.Store({
           harga: 2700,
           deskripsi: "nasi dengan lauk ayam suir",
           src:
-            "https://images.unsplash.com/photo-1570275239925-4af0aa93a0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
+            "https://images.unsplash.com/photo-1570275239925-4af0aa93a0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
         },
         {
           id: 126,
@@ -37,7 +37,7 @@ export default new Vuex.Store({
           harga: 12500,
           deskripsi: "Magelangan",
           src:
-            "https://2.bp.blogspot.com/-BVbjWn7rkEs/VtL3mGKf-7I/AAAAAAAAAFE/nrK9gMmdu6g/s1600/magelangan.Jpeg"
+            "https://2.bp.blogspot.com/-BVbjWn7rkEs/VtL3mGKf-7I/AAAAAAAAAFE/nrK9gMmdu6g/s1600/magelangan.Jpeg",
         },
         {
           id: 120,
@@ -45,7 +45,7 @@ export default new Vuex.Store({
           harga: 8500,
           deskripsi: "nasi dengan lauk ikan tongkol peda",
           src:
-            "https://cdn1-production-images-kly.akamaized.net/DhXJOoGjkSamDiQl4_100bE-HRI=/673x379/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2988447/original/082196100_1575612900-shutterstock_635052485.jpg"
+            "https://cdn1-production-images-kly.akamaized.net/DhXJOoGjkSamDiQl4_100bE-HRI=/673x379/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2988447/original/082196100_1575612900-shutterstock_635052485.jpg",
         },
         {
           id: 150,
@@ -53,7 +53,7 @@ export default new Vuex.Store({
           harga: 1500,
           deskripsi: "sate telor burung puyuh",
           src:
-            "https://cdn-2.tstatic.net/style/foto/bank/images/sate-telur-puyuh_20171122_173155.jpg"
+            "https://cdn-2.tstatic.net/style/foto/bank/images/sate-telur-puyuh_20171122_173155.jpg",
         },
         {
           id: 151,
@@ -61,7 +61,7 @@ export default new Vuex.Store({
           harga: 1500,
           deskripsi: "sate usus ayam",
           src:
-            "https://img-global.cpcdn.com/recipes/e161c0840d797bf9/751x532cq70/sate-usus-pedas-foto-resep-utama.jpg"
+            "https://img-global.cpcdn.com/recipes/e161c0840d797bf9/751x532cq70/sate-usus-pedas-foto-resep-utama.jpg",
         },
         {
           id: 152,
@@ -69,7 +69,7 @@ export default new Vuex.Store({
           harga: 3500,
           deskripsi: "sate ati ampela",
           src:
-            "https://images.unsplash.com/photo-1561626423-a51b45aef0a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1561626423-a51b45aef0a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 153,
@@ -77,7 +77,7 @@ export default new Vuex.Store({
           harga: 8500,
           deskripsi: "Mendoan 8 buah dengan sambal kecap",
           src:
-            "https://cdn2.tstatic.net/manado/foto/bank/images/tempe-mendoan-daun-jeruk-236236.jpg"
+            "https://cdn2.tstatic.net/manado/foto/bank/images/tempe-mendoan-daun-jeruk-236236.jpg",
         },
         {
           id: 154,
@@ -85,7 +85,7 @@ export default new Vuex.Store({
           harga: 10500,
           deskripsi: "Nugget 8 buah dengan saos",
           src:
-            "https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80"
+            "https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80",
         },
         {
           id: 156,
@@ -93,8 +93,8 @@ export default new Vuex.Store({
           harga: 3500,
           deskripsi: "Kerupuk mlarat dan sambal",
           src:
-            "https://tempatwisataindonesia.id/wp-content/uploads/2017/01/Kerupuk-Melarat-1.jpg"
-        }
+            "https://tempatwisataindonesia.id/wp-content/uploads/2017/01/Kerupuk-Melarat-1.jpg",
+        },
       ],
 
       minuman: [
@@ -104,7 +104,7 @@ export default new Vuex.Store({
           harga: 3000,
           deskripsi: "guday sasetan",
           src:
-            "https://images.unsplash.com/7/color-correct-coffee.JPG?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"
+            "https://images.unsplash.com/7/color-correct-coffee.JPG?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80",
         },
         {
           id: 311,
@@ -112,7 +112,7 @@ export default new Vuex.Store({
           harga: 3000,
           deskripsi: "Nutrisari Jeruk",
           src:
-            "https://images.unsplash.com/photo-1572874272417-c06a8ad7d402?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1572874272417-c06a8ad7d402?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 312,
@@ -120,7 +120,7 @@ export default new Vuex.Store({
           harga: 5000,
           deskripsi: "tea jus",
           src:
-            "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80"
+            "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80",
         },
         {
           id: 313,
@@ -128,7 +128,7 @@ export default new Vuex.Store({
           harga: 3500,
           deskripsi: "kapal api sasetan",
           src:
-            "https://images.unsplash.com/photo-1521302080334-4bebac2763a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+            "https://images.unsplash.com/photo-1521302080334-4bebac2763a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         },
         {
           id: 314,
@@ -136,7 +136,7 @@ export default new Vuex.Store({
           harga: 3000,
           deskripsi: "luwak white coffe sasetan",
           src:
-            "https://images.unsplash.com/photo-1468418143278-41595b1a4c89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
+            "https://images.unsplash.com/photo-1468418143278-41595b1a4c89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
         },
         {
           id: 321,
@@ -144,7 +144,7 @@ export default new Vuex.Store({
           harga: 15000,
           deskripsi: "kopi americano",
           src:
-            "https://images.unsplash.com/photo-1544681369-310c49478a6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80"
+            "https://images.unsplash.com/photo-1544681369-310c49478a6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80",
         },
 
         {
@@ -153,7 +153,7 @@ export default new Vuex.Store({
           harga: 18000,
           deskripsi: "Long black",
           src:
-            "https://images.unsplash.com/photo-1517789439268-317443633a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1517789439268-317443633a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 325,
@@ -161,7 +161,7 @@ export default new Vuex.Store({
           harga: 13000,
           deskripsi: "espresso",
           src:
-            "https://images.unsplash.com/photo-1566873886396-030e4c892e73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80"
+            "https://images.unsplash.com/photo-1566873886396-030e4c892e73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
         },
         {
           id: 326,
@@ -169,7 +169,7 @@ export default new Vuex.Store({
           harga: 27000,
           deskripsi: "Machiatio dengan caramel",
           src:
-            "https://images.unsplash.com/photo-1579888071069-c107a6f79d82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1579888071069-c107a6f79d82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 327,
@@ -177,7 +177,7 @@ export default new Vuex.Store({
           harga: 26000,
           deskripsi: "Capuccino with love taste",
           src:
-            "https://images.unsplash.com/photo-1590233722406-fbec1abdde3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80"
+            "https://images.unsplash.com/photo-1590233722406-fbec1abdde3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
         },
         {
           id: 328,
@@ -185,7 +185,7 @@ export default new Vuex.Store({
           harga: 21000,
           deskripsi: "Machiatio dengan caramel",
           src:
-            "https://images.unsplash.com/photo-1521127474489-d524412fd439?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1521127474489-d524412fd439?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 329,
@@ -193,7 +193,7 @@ export default new Vuex.Store({
           harga: 20000,
           deskripsi: "Machiatio dengan caramel",
           src:
-            "https://images.unsplash.com/photo-1527882702270-7094b7fdcd54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80"
+            "https://images.unsplash.com/photo-1527882702270-7094b7fdcd54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80",
         },
         {
           id: 330,
@@ -201,7 +201,7 @@ export default new Vuex.Store({
           harga: 29000,
           deskripsi: "Machiatio dengan caramel",
           src:
-            "https://images.unsplash.com/photo-1585747733279-8f64c2b71381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1585747733279-8f64c2b71381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 340,
@@ -209,7 +209,7 @@ export default new Vuex.Store({
           harga: 11000,
           deskripsi: "jus alpukat",
           src:
-            "https://images.unsplash.com/photo-1583525999977-2b928def9ab6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1583525999977-2b928def9ab6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 341,
@@ -217,7 +217,7 @@ export default new Vuex.Store({
           harga: 5000,
           deskripsi: "jus tomat",
           src:
-            "https://images.unsplash.com/photo-1598215439218-f79b46925d3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1598215439218-f79b46925d3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 342,
@@ -225,7 +225,7 @@ export default new Vuex.Store({
           harga: 19000,
           deskripsi: "sesuai nama item",
           src:
-            "https://images.unsplash.com/photo-1542444459-b54d41b491c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=638&q=80"
+            "https://images.unsplash.com/photo-1542444459-b54d41b491c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=638&q=80",
         },
         {
           id: 343,
@@ -233,7 +233,7 @@ export default new Vuex.Store({
           harga: 9000,
           deskripsi: "Jus jambu",
           src:
-            "https://images.unsplash.com/photo-1577620934834-42cf7718c374?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1577620934834-42cf7718c374?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
         },
         {
           id: 344,
@@ -241,23 +241,23 @@ export default new Vuex.Store({
           harga: 9000,
           deskripsi: "jus strawberry raja wakanda",
           src:
-            "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
-        }
-      ]
+            "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
+        },
+      ],
     },
-    card: []
+    card: [],
   },
 
   getters: {
-    getData: state => {
+    getData: (state) => {
       return state.products.makanan;
     },
-    getDataM: state => {
+    getDataM: (state) => {
       return state.products.minuman;
     },
-    card: state => {
+    card: (state) => {
       return state.card;
-    }
+    },
   },
   actions: {
     addItemToCard({ commit }, item) {
@@ -271,32 +271,41 @@ export default new Vuex.Store({
     },
     removeList({ commit }, id) {
       commit("removeListM", id);
-    }
+    },
+    // addNotesToCard({ commit }, ket) {
+    //   commit("addNote", ket);
+    // },
   },
   mutations: {
     addItem(state, item) {
-      const addItems = state.card.find(product => product.id === item.id);
+      const addItems = state.card.find((product) => product.id === item.id);
       if (addItems) {
         addItems.qty++;
       } else {
         this.state.card.push({ ...item, qty: 1 });
       }
     },
+    // addNote(state, ket, item) {
+    //   let addNotes = state.card.find((product) => product.id === item.id);
+    //   if (addNotes) {
+    //     this.state.card.push({ keterangan: ket });
+    //   }
+    // },
     addListM(state, id) {
-      let list = state.card.find(product => product.id === id);
+      let list = state.card.find((product) => product.id === id);
       list.qty++;
     },
     reduceListM(state, id) {
-      let list = state.card.find(product => product.id === id);
+      let list = state.card.find((product) => product.id === id);
       if (list.qty > 1) {
         list.qty--;
       } else {
-        state.card = state.card.filter(product => product.id !== id);
+        state.card = state.card.filter((product) => product.id !== id);
       }
     },
     removeListM(state, id) {
-      state.card = state.card.filter(product => product.id !== id);
-    }
+      state.card = state.card.filter((product) => product.id !== id);
+    },
   },
-  modules: {}
+  modules: {},
 });
