@@ -11,6 +11,7 @@
             <template v-slot:default>
               <thead>
                 <tr>
+                  <th class="text-left">No</th>
                   <th class="text-left">Item</th>
                   <th class="text-left">Keterangan</th>
                   <th class="text-left">Jumlah</th>
@@ -19,7 +20,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in card" :key="item.id">
+                <tr v-for="(item, index) in card" :key="item.id">
+                  <th>{{ index+1}}</th>
                   <td>{{ item.item }}</td>
                   <td>{{ item.keterangan }}</td>
                   <td>{{ item.qty }}</td>
@@ -27,7 +29,7 @@
                   <td>Rp. {{ item.qty * item.harga }}</td>
                 </tr>
                 <tr>
-                  <td>Total</td>
+                  <td colspan="2">Total</td>
                   <td></td>
                   <td>{{ jumlahPesanan }}</td>
                   <td></td>

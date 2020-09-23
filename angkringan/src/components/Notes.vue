@@ -13,18 +13,17 @@
         <v-col cols="12" md="6">
           <v-textarea
             name="input-7-1"
+            clearable
             label="Catatan Order"
             hint="Cth: Ekstra gula, Tidak pakai sambel, & Etc"
-            v-model="keterangan"
+            v-model="ket"
           ></v-textarea>
         </v-col>
-
         <v-divider></v-divider>
-
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="dialog = false">Batal</v-btn>
-          <v-btn color="primary" text @click="dialog = false">Tambah</v-btn>
+          <v-btn color="primary" text @click="dialog = false, addNotesToCard() ">Tambah</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -32,19 +31,29 @@
 </template>
 
 <script>
-// import { mapActions } from "vuex";
+import { mapGetters } from "vuex";
 export default {
+  props: ["id"],
   data() {
     return {
-      dialog: false,
-      keterangan: ""
+      dialog: false
     };
   },
+  computed: {
+    ...mapGetters(["card"]),
+    ket: {
+      get() {
+        return this.$store.state.ket;
+      },
+      set(value) {
+        this.$store.commit("bindingKet", value);
+      }
+    }
+  },
   methods: {
-    // ...mapActions(["addNotesToCard"])
-    // addNotes() {
-    //   this.$store.dispatch("addNotesToCard", this.keterangan);
-    // }
+    addNotesToCard() {
+      this.$store.commit("addKeterangan", this.id);
+    }
   }
 };
 </script>

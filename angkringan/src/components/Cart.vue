@@ -31,7 +31,7 @@
           <v-btn icon @click="removeList(it.id)">
             <v-icon color="orange darken-4">mdi-trash-can-outline</v-icon>
           </v-btn>
-          <Notes />
+          <Notes :id="it.id" />
         </v-card-actions>
       </v-card>
     </div>
@@ -39,7 +39,6 @@
     <v-card class="mx-auto" max-width="544" outlined>
       <v-card-title>Jumlah Pesanan : {{ jumlahPesanan }}</v-card-title>
       <v-card-title>Total: Rp. {{ total }}</v-card-title>
-      <!-- <v-btn class="ma-2" tile color="primary" dark rounded>Checkout</v-btn> -->
     </v-card>
     <Checkout />
   </div>
@@ -71,6 +70,9 @@ export default {
   },
   methods: {
     ...mapActions(["addList", "reduceList", "removeList"])
+  },
+  mounted() {
+    this.card;
   }
 };
 </script>
