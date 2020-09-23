@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row justify="center">
-      <v-dialog v-model="dialog" persistent max-width="500">
+      <v-dialog v-model="dialog" persistent max-width="800">
         <template v-slot:activator="{ on, attrs }">
           <v-btn color="primary" dark v-bind="attrs" v-on="on">Pesan Sekarang</v-btn>
         </template>
