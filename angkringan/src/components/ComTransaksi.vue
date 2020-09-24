@@ -17,9 +17,9 @@
           <tr v-for="(item, index) in card" :key="item.id">
             <td>{{ index + 1 }}</td>
             <td>{{ item.item }}</td>
-            <td>{{ item.harga }}</td>
+            <td>Rp. {{ item.harga }}</td>
             <td>{{ item.qty }}</td>
-            <td>{{ item.qty * item.harga }}</td>
+            <td>Rp. {{ item.qty * item.harga }}</td>
             <td>{{ item.keterangan }}</td>
             <td>{{ tgl }}</td>
           </tr>
@@ -30,7 +30,7 @@
           </tr>
           <tr>
             <td colspan="4">Harga Total :</td>
-            <td>{{ jumlahTot }}</td>
+            <td>Rp. {{ jumlahTot }}</td>
           </tr>
         </tbody>
       </template>

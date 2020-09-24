@@ -21,9 +21,9 @@
               <td>{{ tgl }}</td>
               <td>{{ item.item }}</td>
               <td>{{ item.keterangan }}</td>
-              <td>{{ item.harga }}</td>
+              <td>Rp. {{ item.harga }}</td>
               <td>{{ item.qty }}</td>
-              <td>{{ item.qty * item.harga }}</td>
+              <td>Rp. {{ item.qty * item.harga }}</td>
             </tr>
             <tr>
               <td colspan="4">Total Pesanan</td>
@@ -32,7 +32,7 @@
             </tr>
             <tr>
               <td colspan="6">Harga Total :</td>
-              <td>{{ jumlahTot }}</td>
+              <td>Rp. {{ jumlahTot }}</td>
             </tr>
           </tbody>
         </template>
