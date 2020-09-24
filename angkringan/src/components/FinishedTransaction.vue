@@ -1,36 +1,67 @@
 <template>
   <div>
-    <v-card class="mx-auto" max-width="1000" cols="12" md="12" sm="12">
-      <v-card-text>
-        <p class="display-1 text--primary">
-          Silahkan ke kasir, selesaikan transaksi kamu!!
-        </p>
-        <!-- <div class="text--primary">Dan silahkan tunggu pesanan mu</div> -->
-        <h4 class="text--primary">
-          Dan silahkan tunggu, pesanan mu segera datang..
-        </h4>
-      </v-card-text>
-      <v-row align="center" justify="center" cols="12" md="12" sm="12">
-        <v-card-actions>
-          <!-- <v-btn text color="deep-purple accent-4">Learn More</v-btn> -->
-          <v-img
-            rounded
-            src="../assets/success.png"
-            alt="Success"
-            max-width="500"
-            max-height="300"
-          ></v-img>
-        </v-card-actions>
-      </v-row>
-      <p class="display-1 text--primary">
-        Terima kasih sudah menjadi pelanggan setia kami.
-      </p>
-    </v-card>
+    <v-card-title class="headline">Transaksi Kamu</v-card-title>
+    <v-simple-table fixed-header height="300px">
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th>ID Transaksi</th>
+            <th>Tanggal Transaksi</th>
+            <th>Nama Item</th>
+            <th>Keterangan</th>
+            <th>Harga</th>
+            <th>Jumlah Pesanan</th>
+            <th>Harga Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in card" :key="item.id">
+            <td>{{ index + 1 }}</td>
+            <td>{{ tgl }}</td>
+            <td>{{ item.item }}</td>
+            <td>{{ item.keterangan }}</td>
+            <td>{{ item.harga }}</td>
+            <td>{{ item.qty }}</td>
+            <td>{{ item.qty * item.harga }}</td>
+          </tr>
+          <tr>
+            <td colspan="4">Total Pesanan</td>
+            <td></td>
+            <td>{{ jml }}</td>
+          </tr>
+          <tr>
+            <td colspan="6">Harga Total :</td>
+            <td>{{ jumlahTot }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters(["card"]),
+    jumlahTot() {
+      return this.card.reduce((a, b) => a + b.qty * b.harga, 0);
+    },
+    jml() {
+      return this.card.reduce((a, b) => a + b.qty, 0);
+    },
+    tgl() {
+      let date = new Date();
+      return date.toDateString();
+    }
+  },
+  mounted() {
+    this.card;
+  }
+};
 </script>
 
 <style></style>

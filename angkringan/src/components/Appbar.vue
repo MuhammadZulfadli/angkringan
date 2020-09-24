@@ -12,7 +12,6 @@
       <v-spacer></v-spacer>
       <!-- Search -->
       <v-text-field
-        class="mx-4"
         v-model="message"
         flat
         hide-details
