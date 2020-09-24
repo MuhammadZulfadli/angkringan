@@ -1,7 +1,10 @@
 <template>
   <div>
     <v-app-bar app flat>
-      <v-app-bar-nav-icon class="grey--text" @click="drawer = true"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        class="grey--text"
+        @click="drawer = true"
+      ></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Angkringan</span>
         <strong>4.0</strong>
@@ -10,11 +13,11 @@
       <!-- Search -->
       <v-text-field
         class="mx-4"
+        v-model="message"
         flat
         hide-details
         label="Search"
         solo-inverted
-        @keyup="findMakanan()"
       ></v-text-field>
       <!-- Cart icon -->
       <v-btn icon color="grey" class="mx-10" to="/cart">
@@ -46,7 +49,12 @@ export default {
       links: [
         { icon: "mdi-home", text: "Home", route: "/" },
         { icon: "mdi-food", text: "Makanan", route: "/makanan" },
-        { icon: "mdi-coffee", text: "Minuman", route: "/minuman" }
+        { icon: "mdi-coffee", text: "Minuman", route: "/minuman" },
+        {
+          icon: "mdi-file-chart",
+          text: "Report Transaksi",
+          route: "/transaksi"
+        }
       ]
     };
   },
@@ -54,6 +62,14 @@ export default {
     ...mapGetters(["card"]),
     jumlah() {
       return this.card.length;
+    },
+    message: {
+      get() {
+        return this.$store.getters.searchQuery;
+      },
+      set(value) {
+        this.$store.commit("updateMessage", value);
+      }
     }
   }
 };

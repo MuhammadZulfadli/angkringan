@@ -1,8 +1,8 @@
 <template>
   <v-app class="grey lighten-4">
     <Appbar />
-
     <v-main>
+      <Navigation />
       <v-container fluid>
         <router-view></router-view>
       </v-container>
@@ -15,13 +15,15 @@
 <script>
 import Appbar from "./components/Appbar";
 import Footer from "./views/Footer";
+import Navigation from "@/components/Navigation";
 
 export default {
   name: "App",
 
   components: {
     Appbar,
-    Footer
+    Footer,
+    Navigation
     // Cart
   },
 

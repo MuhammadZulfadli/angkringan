@@ -2,7 +2,12 @@
   <div>
     <v-container class="my-5">
       <v-row dense>
-        <v-col v-for="makanan in makanans" :key="makanan.id" cols="12" md="3">
+        <v-col
+          v-for="makanan in filteredResources()"
+          :key="makanan.id"
+          cols="12"
+          md="3"
+        >
           <v-card>
             <v-img
               :src="makanan.src"
@@ -26,10 +31,20 @@
                 Pesan
                 <!-- <v-icon>mdi-cart</v-icon> -->
               </v-btn>
-              <v-snackbar v-model="snackbar" :timeout="timeout" :top="y === 'top'">
+              <v-snackbar
+                v-model="snackbar"
+                :timeout="timeout"
+                :top="y === 'top'"
+              >
                 {{ text }}
                 <template v-slot:action="{ attrs }">
-                  <v-btn color="red darken-2" text v-bind="attrs" @click="snackbar = false">Close</v-btn>
+                  <v-btn
+                    color="red darken-2"
+                    text
+                    v-bind="attrs"
+                    @click="snackbar = false"
+                    >Close</v-btn
+                  >
                 </template>
               </v-snackbar>
             </v-card-actions>
@@ -56,10 +71,26 @@ export default {
   computed: {
     makanans() {
       return this.$store.getters.getData;
+    },
+    searchQuery() {
+      return this.$store.getters.searchQuery;
     }
   },
   methods: {
-    ...mapActions(["addItemToCard"])
+    ...mapActions(["addItemToCard"]),
+    filteredResources() {
+      if (this.searchQuery) {
+        // console.log(this.searchQuery)
+        return this.makanans.filter(items => {
+          return this.searchQuery
+            .toLowerCase()
+            .split(" ")
+            .every(v => items.item.toLowerCase().includes(v));
+        });
+      } else {
+        return this.makanans;
+      }
+    }
   }
 };
 </script>

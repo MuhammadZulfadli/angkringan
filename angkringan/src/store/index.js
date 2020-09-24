@@ -276,6 +276,7 @@ export default new Vuex.Store({
     },
     card: [],
     ket: "",
+    message: "",
   },
 
   getters: {
@@ -287,6 +288,9 @@ export default new Vuex.Store({
     },
     card: (state) => {
       return state.card;
+    },
+    searchQuery: (state) => {
+      return state.message;
     },
     // keterangan: (state) => {
     //   return state.keterangan;
@@ -310,6 +314,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    updateMessage(state, payload) {
+      state.message = payload;
+    },
     addItem(state, item) {
       const addItems = state.card.find((product) => product.id === item.id);
       if (addItems) {
