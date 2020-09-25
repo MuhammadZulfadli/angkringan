@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navigation />
     <v-container class="my-5">
       <v-row dense>
         <v-col
@@ -56,10 +57,13 @@
 </template>
 
 <script>
+import Navigation from "@/components/Navigation";
 import { mapActions } from "vuex";
 export default {
   name: "Makanan",
-  components: {},
+  components: {
+    Navigation
+  },
   data() {
     return {
       snackbar: false,

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navigation />
     <!-- minuman -->
     <v-container class="my-5">
       <v-row>
@@ -82,7 +83,7 @@
 </template>
 
 <script>
-// import Alert from "@/components/Snackbar";
+import Navigation from "@/components/Navigation";
 import { mapActions } from "vuex";
 export default {
   name: "Home",
@@ -94,7 +95,9 @@ export default {
       y: "top"
     };
   },
-  components: {},
+  components: {
+    Navigation
+  },
   computed: {
     minuman() {
       return this.$store.getters.getDataM;

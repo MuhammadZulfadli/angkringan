@@ -8,7 +8,9 @@
       </template>
 
       <v-card>
-        <v-card-title class="headline grey lighten-2">Tambahkan Catatan</v-card-title>
+        <v-card-title class="headline grey lighten-2"
+          >Tambahkan Catatan</v-card-title
+        >
 
         <v-col cols="12" md="6">
           <v-textarea
@@ -16,15 +18,21 @@
             clearable
             label="Catatan Order"
             placeholder="Cth: Ekstra gula, Tidak pakai sambel, & Etc"
-            hint="Cth: Ekstra gula, Tidak pakai sambel, & Etc"
+            hint="at least max 100 character"
             v-model="ket"
+            :maxlength="max"
           ></v-textarea>
         </v-col>
         <v-divider></v-divider>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="dialog = false">Batal</v-btn>
-          <v-btn color="primary" text @click="dialog = false,  addNotesToCard()  ">Tambah</v-btn>
+          <v-btn
+            color="primary"
+            text
+            @click="(dialog = false), addNotesToCard()"
+            >Tambah</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -37,7 +45,9 @@ export default {
   props: ["id"],
   data() {
     return {
-      dialog: false
+      dialog: false,
+      max: 100,
+      text: ""
     };
   },
   computed: {

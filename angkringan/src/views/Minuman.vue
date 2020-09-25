@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navigation />
     <v-container class="my-5">
       <v-row dense>
         <v-col v-for="mn in filteredResources()" :key="mn.id" cols="12" md="3">
@@ -50,6 +51,7 @@
 </template>
 
 <script>
+import Navigation from "@/components/Navigation";
 import { mapActions } from "vuex";
 export default {
   name: "Minuman",
@@ -60,6 +62,9 @@ export default {
       timeout: 2000,
       y: "top"
     };
+  },
+  components: {
+    Navigation
   },
   computed: {
     minumans() {

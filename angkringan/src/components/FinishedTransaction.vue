@@ -2,12 +2,14 @@
   <div>
     <v-container>
       <v-card-title class="headline">Transaksi Kamu</v-card-title>
-      <v-simple-table fixed-header height="300px">
+      <v-simple-table fixed-header height="600px">
         <template v-slot:default>
           <thead>
             <tr>
-              <th>ID Transaksi</th>
-              <th>Tanggal Transaksi</th>
+              <td>ID Transaksi : #{{ idPesan }}</td>
+              <td>Tanggal Transaksi : {{ tgl }}</td>
+            </tr>
+            <tr>
               <th>Nama Item</th>
               <th>Keterangan</th>
               <th>Harga</th>
@@ -16,9 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, index) in card" :key="item.id">
-              <td>{{ index + 1 }}</td>
-              <td>{{ tgl }}</td>
+            <tr v-for="item in card" :key="item.id">
               <td>{{ item.item }}</td>
               <td>{{ item.keterangan }}</td>
               <td>Rp. {{ item.harga }}</td>
@@ -26,12 +26,12 @@
               <td>Rp. {{ item.qty * item.harga }}</td>
             </tr>
             <tr>
-              <td colspan="4">Total Pesanan</td>
+              <td colspan="2">Total Pesanan</td>
               <td></td>
               <td>{{ jml }}</td>
             </tr>
             <tr>
-              <td colspan="6">Harga Total :</td>
+              <td colspan="4">Harga Total :</td>
               <td>Rp. {{ jumlahTot }}</td>
             </tr>
           </tbody>
@@ -58,6 +58,12 @@ export default {
     tgl() {
       let date = new Date();
       return date.toDateString();
+    },
+    idPesan() {
+      // return Math.floor(Math.random() * 300);
+      let a = 0;
+      a += `00` + 1;
+      return a;
     }
   },
   mounted() {

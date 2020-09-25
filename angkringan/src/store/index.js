@@ -292,9 +292,6 @@ export default new Vuex.Store({
     searchQuery: (state) => {
       return state.message;
     },
-    // keterangan: (state) => {
-    //   return state.keterangan;
-    // },
   },
   actions: {
     addItemToCard({ commit }, item) {
