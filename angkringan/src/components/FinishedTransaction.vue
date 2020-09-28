@@ -37,6 +37,10 @@
           </tbody>
         </template>
       </v-simple-table>
+      <v-container fluid>
+        <h1>Pembayaran</h1>
+        <img v-bind:src="qrcodeCoba" alt="qr-code" />
+      </v-container>
     </v-container>
   </div>
 </template>
@@ -45,7 +49,9 @@
 import { mapGetters } from "vuex";
 export default {
   data() {
-    return {};
+    return {
+      baseURL: `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=`
+    };
   },
   computed: {
     ...mapGetters(["card"]),
@@ -62,12 +68,16 @@ export default {
     idPesan() {
       // return Math.floor(Math.random() * 300);
       let a = 0;
-      a += `00` + 1;
+      a += `00${1}`;
       return a;
+    },
+    qrcodeCoba() {
+      return this.baseURL + this.jml;
     }
   },
   mounted() {
     this.card;
+    scrollTo(0, 0);
   }
 };
 </script>

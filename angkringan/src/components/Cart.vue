@@ -1,11 +1,14 @@
 <template>
   <div>
+    <Breadcrumbs />
     <div v-for="it in card" :key="it.id">
       <v-card class="mx-auto" max-width="544" outlined>
         <v-list-item three-line>
           <v-list-item-content>
             <div class="overline mb-4">Cart</div>
-            <v-list-item-title class="headline mb-1">{{ it.item }}</v-list-item-title>
+            <v-list-item-title class="headline mb-1">{{
+              it.item
+            }}</v-list-item-title>
             <v-list-item-subtitle>Rp. {{ it.harga }}</v-list-item-subtitle>
           </v-list-item-content>
 
@@ -45,6 +48,7 @@
 </template>
 
 <script>
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Checkout from "@/components/Checkout";
 import Notes from "@/components/Notes";
 import { mapGetters, mapActions } from "vuex";
@@ -54,7 +58,8 @@ export default {
   },
   components: {
     Checkout,
-    Notes
+    Notes,
+    Breadcrumbs
   },
   computed: {
     ...mapGetters(["card"]),
@@ -73,6 +78,7 @@ export default {
   },
   mounted() {
     this.card;
+    scrollTo(0, 0);
   }
 };
 </script>

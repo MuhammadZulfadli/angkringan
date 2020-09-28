@@ -1,10 +1,21 @@
 <template>
   <div>
-    <v-tabs dense fixed-tabs background-color="transparent" color="primary">
-      <v-tab v-for="link in links" :key="link.text" :to="link.route"
-        >{{ link.text }}
-      </v-tab>
-    </v-tabs>
+    <v-container>
+      <v-tabs
+        centered
+        dense
+        background-color="transparent"
+        color="orange darken-4"
+      >
+        <v-tab
+          class="text-capitalize"
+          v-for="link in links"
+          :key="link.text"
+          :to="link.route"
+          >{{ link.text }}
+        </v-tab>
+      </v-tabs>
+    </v-container>
   </div>
 </template>
 

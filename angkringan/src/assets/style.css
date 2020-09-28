@@ -1,0 +1,6 @@
+.v-breadcrumbs__item {
+  color: #e65100 !important;
+}
+.v-breadcrumbs__item--disabled {
+  color: gray !important;
+}

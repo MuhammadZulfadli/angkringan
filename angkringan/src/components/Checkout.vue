@@ -3,7 +3,9 @@
     <v-row justify="center">
       <v-dialog v-model="dialog" persistent max-width="800">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn color="primary" dark v-bind="attrs" v-on="on">Pesan Sekarang</v-btn>
+          <v-btn class="mt-3" color="deep-orange" dark v-bind="attrs" v-on="on"
+            >Pesan Sekarang</v-btn
+          >
         </template>
         <v-card>
           <v-card-title class="headline">Transaksi Kamu</v-card-title>
@@ -21,7 +23,7 @@
               </thead>
               <tbody>
                 <tr v-for="(item, index) in card" :key="item.id">
-                  <th>{{ index+1}}</th>
+                  <th>{{ index + 1 }}</th>
                   <td>{{ item.item }}</td>
                   <td>{{ item.keterangan }}</td>
                   <td>{{ item.qty }}</td>
@@ -41,8 +43,16 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="dialog = false">Batal</v-btn>
-            <v-btn color="primary" text @click="dialog = false" to="/transaction_success">Lanjutkan</v-btn>
+            <v-btn color="orange darken-4" text @click="dialog = false"
+              >Batal</v-btn
+            >
+            <v-btn
+              color="orange darken-4"
+              text
+              @click="dialog = false"
+              to="/transaction_success"
+              >Lanjutkan</v-btn
+            >
           </v-card-actions>
         </v-card>
       </v-dialog>

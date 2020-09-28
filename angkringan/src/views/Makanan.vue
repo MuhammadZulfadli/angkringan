@@ -2,14 +2,14 @@
   <div>
     <Navigation />
     <v-container class="my-5">
-      <v-row dense>
+      <v-row>
         <v-col
           v-for="makanan in filteredResources()"
           :key="makanan.id"
           cols="12"
           md="3"
         >
-          <v-card>
+          <v-card class="pa-2" outlined shaped>
             <v-img
               :src="makanan.src"
               class="white--text align-end"
@@ -17,38 +17,35 @@
               height="200px"
               @click="addItemToCard(makanan), (snackbar = true)"
             >
-              <v-card-title>{{ makanan.item }}</v-card-title>
+              <v-card-title class="text">{{ makanan.item }}</v-card-title>
             </v-img>
-
             <v-card-actions>
               <v-spacer></v-spacer>
-
-              <v-card-title>Rp. {{ makanan.harga }}</v-card-title>
-              <v-btn
-                @click="addItemToCard(makanan), (snackbar = true)"
-                class="mx-6"
-                color="primary"
-              >
-                Pesan
-                <!-- <v-icon>mdi-cart</v-icon> -->
-              </v-btn>
-              <v-snackbar
-                v-model="snackbar"
-                :timeout="timeout"
-                :top="y === 'top'"
-              >
-                {{ text }}
-                <template v-slot:action="{ attrs }">
-                  <v-btn
-                    color="red darken-2"
-                    text
-                    v-bind="attrs"
-                    @click="snackbar = false"
-                    >Close</v-btn
-                  >
-                </template>
-              </v-snackbar>
+              <v-card-title class="text">Rp. {{ makanan.harga }}</v-card-title>
             </v-card-actions>
+            <v-snackbar
+              v-model="snackbar"
+              :timeout="timeout"
+              :top="y === 'top'"
+            >
+              {{ text }}
+              <template v-slot:action="{ attrs }">
+                <v-btn
+                  color="orange darken-4"
+                  text
+                  v-bind="attrs"
+                  @click="snackbar = false"
+                  >Close</v-btn
+                >
+              </template>
+            </v-snackbar>
+            <v-btn
+              @click="addItemToCard(makanan), (snackbar = true)"
+              class="rounded-br-xl text-capitalize"
+              color="white--text orange darken-4"
+              width="100%"
+              >Pesan</v-btn
+            >
           </v-card>
         </v-col>
       </v-row>
@@ -99,4 +96,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.015625em;
+}
+</style>
