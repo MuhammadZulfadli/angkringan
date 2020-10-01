@@ -57,46 +57,13 @@
           </v-simple-table>
         </section>
       </vue-html2pdf>
-      <!-- <v-simple-table height="300px" id="test">
-        <template v-slot:default>
-          <thead>
-            <tr>
-              <td>ID Transaksi : #{{ idPesan }}</td>
-              <td>Tanggal Transaksi : {{ tgl }}</td>
-            </tr>
-            <tr>
-              <th>Nama Item</th>
-              <th>Keterangan</th>
-              <th>Harga</th>
-              <th>Jumlah Pesanan</th>
-              <th>Harga Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in card" :key="item.id">
-              <td>{{ item.item }}</td>
-              <td>{{ item.keterangan }}</td>
-              <td>Rp. {{ item.harga }}</td>
-              <td>{{ item.qty }}</td>
-              <td>Rp. {{ item.qty * item.harga }}</td>
-            </tr>
-            <tr>
-              <td colspan="2">Total Pesanan</td>
-              <td></td>
-              <td>{{ jml }}</td>
-            </tr>
-            <tr>
-              <td colspan="4">Harga Total :</td>
-              <td>Rp. {{ jumlahTot }}</td>
-            </tr>
-          </tbody>
-        </template>
-      </v-simple-table> -->
       <v-container>
         <v-row>
           <v-col>
-            <v-btn class="orange white--text" @click="printBill"
-              >Print Bill</v-btn
+            <v-btn
+              class="orange darken-4 white--text text-capitalize"
+              @click="printBill"
+              >Cetak Pembayaran</v-btn
             >
           </v-col>
         </v-row>
