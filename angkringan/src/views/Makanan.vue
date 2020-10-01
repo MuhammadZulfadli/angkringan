@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigation />
-    <v-container class="my-5">
+    <v-container>
       <v-row>
         <v-col
           v-for="makanan in filteredResources()"
@@ -103,3 +103,5 @@ export default {
   letter-spacing: -0.015625em;
 }
 </style>
+
+<navbar />

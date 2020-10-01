@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigation />
-    <v-container class="my-5">
+    <v-container>
       <v-row>
         <v-col v-for="mn in filteredResources()" :key="mn.id" cols="12" md="3">
           <v-card class="pa-2" outlined shaped>

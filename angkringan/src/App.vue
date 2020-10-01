@@ -1,6 +1,6 @@
 <template>
   <v-app class="grey lighten-4">
-    <Appbar />
+    <!-- <Appbar /> -->
     <v-main>
       <v-container fluid>
         <router-view></router-view>
@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import Appbar from "./components/Appbar";
+// import Appbar from "./components/Appbar";
 import Footer from "./views/Footer";
 
 export default {
   name: "App",
 
   components: {
-    Appbar,
+    // Appbar,
     Footer
   },
 

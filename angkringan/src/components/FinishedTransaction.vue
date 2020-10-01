@@ -2,7 +2,62 @@
   <div>
     <v-container>
       <v-card-title class="headline">Transaksi Kamu</v-card-title>
-      <v-simple-table fixed-header height="600px">
+      <vue-html2pdf
+        :show-layout="false"
+        :float-layout="true"
+        :enable-download="true"
+        :preview-modal="true"
+        :paginate-elements-by-height="1400"
+        filename="hee hee"
+        :pdf-quality="2"
+        :manual-pagination="false"
+        pdf-format="a4"
+        pdf-orientation="landscape"
+        pdf-content-width="800px"
+        @progress="onProgress($event)"
+        @hasStartedGeneration="hasStartedGeneration()"
+        @hasGenerated="hasGenerated($event)"
+        ref="html2Pdf"
+      >
+        <section slot="pdf-content">
+          <v-simple-table height="300px" id="test">
+            <template v-slot:default>
+              <thead>
+                <tr>
+                  <td>ID Transaksi : #{{ idPesan }}</td>
+                  <td>Tanggal Transaksi : {{ tgl }}</td>
+                </tr>
+                <tr>
+                  <th>Nama Item</th>
+                  <th>Keterangan</th>
+                  <th>Harga</th>
+                  <th>Jumlah Pesanan</th>
+                  <th>Harga Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in card" :key="item.id">
+                  <td>{{ item.item }}</td>
+                  <td>{{ item.keterangan }}</td>
+                  <td>Rp. {{ item.harga }}</td>
+                  <td>{{ item.qty }}</td>
+                  <td>Rp. {{ item.qty * item.harga }}</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Total Pesanan</td>
+                  <td></td>
+                  <td>{{ jml }}</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Harga Total :</td>
+                  <td>Rp. {{ jumlahTot }}</td>
+                </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
+        </section>
+      </vue-html2pdf>
+      <!-- <v-simple-table height="300px" id="test">
         <template v-slot:default>
           <thead>
             <tr>
@@ -36,7 +91,16 @@
             </tr>
           </tbody>
         </template>
-      </v-simple-table>
+      </v-simple-table> -->
+      <v-container>
+        <v-row>
+          <v-col>
+            <v-btn class="orange white--text" @click="printBill"
+              >Print Bill</v-btn
+            >
+          </v-col>
+        </v-row>
+      </v-container>
       <v-container fluid>
         <h1>Pembayaran</h1>
         <img v-bind:src="qrcodeCoba" alt="qr-code" />
@@ -47,11 +111,16 @@
 
 <script>
 import { mapGetters } from "vuex";
+import VueHtml2pdf from "vue-html2pdf";
+
 export default {
   data() {
     return {
-      baseURL: `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=`
+      baseURL: `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=`,
     };
+  },
+  components: {
+    VueHtml2pdf,
   },
   computed: {
     ...mapGetters(["card"]),
@@ -73,12 +142,17 @@ export default {
     },
     qrcodeCoba() {
       return this.baseURL + this.jml;
-    }
+    },
+  },
+  methods: {
+    printBill() {
+      this.$refs.html2Pdf.generatePdf();
+    },
   },
   mounted() {
     this.card;
     scrollTo(0, 0);
-  }
+  },
 };
 </script>
 

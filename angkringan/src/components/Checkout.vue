@@ -3,7 +3,12 @@
     <v-row justify="center">
       <v-dialog v-model="dialog" persistent max-width="800">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn class="mt-3" color="deep-orange" dark v-bind="attrs" v-on="on"
+          <v-btn
+            class="mt-3 text-capitalize"
+            color="deep-orange"
+            dark
+            v-bind="attrs"
+            v-on="on"
             >Pesan Sekarang</v-btn
           >
         </template>
