@@ -21,6 +21,9 @@
         </v-list>
       </v-navigation-drawer>
     </v-container>
+    <div>
+      <p>Angkringan <strong>4.0</strong></p>
+    </div>
     <v-container class="d-none d-sm-flex d-md-none d-lg-flex">
       <v-tabs
         centered
@@ -43,19 +46,16 @@
     <v-container>
       <div class="d-flex justify-space-between">
         <!-- Search -->
-        <div>
-          <v-text-field
-            v-model="message"
-            class="mx-3"
-            label="Search"
-            outlined
-            prepend-inner-icon="mdi-magnify"
-            width="200px"
-          ></v-text-field>
-        </div>
+        <v-text-field
+          v-model="message"
+          class="mx-3"
+          label="Nasi Kucing"
+          outlined
+          prepend-inner-icon="mdi-magnify"
+        ></v-text-field>
 
         <!-- Cart icon -->
-        <v-btn icon class="append" color="grey" to="/cart">
+        <v-btn icon class="append button-cart" color="grey" to="/cart">
           <v-icon right>mdi-shopping</v-icon>
           <v-badge color="#ED5575" :content="jumlah"></v-badge>
         </v-btn>
@@ -74,7 +74,8 @@ export default {
       links: [
         { icon: "mdi-home", text: "All", route: "/" },
         { icon: "mdi-food", text: "Makanan", route: "/makanan" },
-        { icon: "mdi-coffee", text: "Minuman", route: "/minuman" }
+        { icon: "mdi-coffee", text: "Minuman", route: "/minuman" },
+        { icon: "mdi-file-chart", text: "Konfirmasi", route: "/konfirmasi" }
       ]
     };
   },
@@ -95,5 +96,17 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style scoped>
+.v-btn--icon.v-size--default .v-icon,
+.v-btn--fab.v-size--default .v-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+}
+
+.v-application p {
+  font-size: 45px;
+  text-align: center;
+  color: #1e304d;
+}
+</style>>

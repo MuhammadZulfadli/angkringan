@@ -5,15 +5,15 @@
       <vue-html2pdf
         :show-layout="false"
         :float-layout="true"
-        :enable-download="true"
+        :enable-download="false"
         :preview-modal="true"
         :paginate-elements-by-height="1400"
-        filename="hee hee"
+        filename="struk"
         :pdf-quality="2"
         :manual-pagination="false"
         pdf-format="a4"
         pdf-orientation="landscape"
-        pdf-content-width="800px"
+        pdf-content-width="1000px"
         @progress="onProgress($event)"
         @hasStartedGeneration="hasStartedGeneration()"
         @hasGenerated="hasGenerated($event)"
@@ -58,15 +58,17 @@
         </section>
       </vue-html2pdf>
       <v-container>
-        <v-row>
-          <v-col>
-            <v-btn
-              class="orange darken-4 white--text text-capitalize"
-              @click="printBill"
-              >Cetak Pembayaran</v-btn
-            >
-          </v-col>
-        </v-row>
+        <v-card-actions>
+          <v-btn
+            class="orange darken-4 white--text text-capitalize"
+            @click="printBill"
+            >Cetak Pembayaran</v-btn
+          >
+
+          <!-- <v-btn class="primary white--t  ext text-capitalize" to="/cart"
+            >Batal</v-btn
+          > -->
+        </v-card-actions>
       </v-container>
       <v-container fluid>
         <h1>Pembayaran</h1>
@@ -83,11 +85,11 @@ import VueHtml2pdf from "vue-html2pdf";
 export default {
   data() {
     return {
-      baseURL: `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=`,
+      baseURL: `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=`
     };
   },
   components: {
-    VueHtml2pdf,
+    VueHtml2pdf
   },
   computed: {
     ...mapGetters(["card"]),
@@ -109,17 +111,17 @@ export default {
     },
     qrcodeCoba() {
       return this.baseURL + this.jml;
-    },
+    }
   },
   methods: {
     printBill() {
       this.$refs.html2Pdf.generatePdf();
-    },
+    }
   },
   mounted() {
     this.card;
     scrollTo(0, 0);
-  },
+  }
 };
 </script>
 

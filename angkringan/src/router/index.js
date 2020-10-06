@@ -54,6 +54,14 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "snack" */ "../views/Transaksi.vue"),
   },
+  {
+    path: "/konfirmasi",
+    name: "Konfirmasi",
+    component: () =>
+      import(
+        /* webpackChunkName: "snack" */ "../components/ComponentConfirm.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({

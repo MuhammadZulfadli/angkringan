@@ -6,7 +6,7 @@
         <router-view></router-view>
       </v-container>
     </v-main>
-
+    <!-- <BottomNav /> -->
     <Footer />
   </v-app>
 </template>
@@ -14,6 +14,7 @@
 <script>
 // import Appbar from "./components/Appbar";
 import Footer from "./views/Footer";
+// import BottomNav from "@/components/BottomNav";
 
 export default {
   name: "App",
@@ -21,6 +22,7 @@ export default {
   components: {
     // Appbar,
     Footer
+    // BottomNav
   },
 
   data: () => ({

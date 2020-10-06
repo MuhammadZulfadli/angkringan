@@ -4,19 +4,22 @@
     <v-container>
       <v-row>
         <v-col v-for="mn in filteredResources()" :key="mn.id" cols="12" md="3">
-          <v-card class="pa-2" outlined shaped>
+          <v-card
+            @click="addItemToCard(mn), (snackbar = true)"
+            class="pa-2 rounded-xl"
+            outlined
+          >
+            <v-card-title class="text-item">{{ mn.item }}</v-card-title>
             <v-img
               :src="mn.src"
-              class="white--text align-end"
+              class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
-              @click="addItemToCard(mn), (snackbar = true)"
             >
-              <v-card-title class="text">{{ mn.item }}</v-card-title>
             </v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-card-title class="text"
+              <v-card-title class="text-price"
                 >Rp. {{ mn.harga }}</v-card-title
               > </v-card-actions
             ><!-- Snackbar Notification -->
@@ -39,7 +42,7 @@
             <v-btn
               @click="addItemToCard(mn), (snackbar = true)"
               color="white--text deep-orange"
-              class="rounded-br-xl text-capitalize"
+              class="rounded-xl text-capitalize"
               width="100%"
               >Pesan</v-btn
             >
@@ -100,9 +103,4 @@ export default {
 </script>
 
 <style scoped>
-.text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: -0.015625em;
-}
 </style>

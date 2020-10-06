@@ -9,19 +9,24 @@
           cols="12"
           md="3"
         >
-          <v-card class="pa-2" outlined shaped>
+          <v-card class="pa-2 rounded-xl" outlined>
+            <v-card-title
+              @click="addItemToCard(makanan), (snackbar = true)"
+              class="text-item"
+              >{{ makanan.item }}</v-card-title
+            >
             <v-img
               :src="makanan.src"
-              class="white--text align-end"
+              class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
-              @click="addItemToCard(makanan), (snackbar = true)"
             >
-              <v-card-title class="text">{{ makanan.item }}</v-card-title>
             </v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-card-title class="text">Rp. {{ makanan.harga }}</v-card-title>
+              <v-card-title class="text-price"
+                >Rp. {{ makanan.harga }}</v-card-title
+              >
             </v-card-actions>
             <v-snackbar
               v-model="snackbar"
@@ -41,7 +46,7 @@
             </v-snackbar>
             <v-btn
               @click="addItemToCard(makanan), (snackbar = true)"
-              class="rounded-br-xl text-capitalize"
+              class="rounded-xl text-capitalize"
               color="white--text orange darken-4"
               width="100%"
               >Pesan</v-btn
@@ -75,6 +80,9 @@ export default {
     },
     searchQuery() {
       return this.$store.getters.searchQuery;
+    },
+    idr() {
+      return this.$store.getters.idr;
     }
   },
   methods: {
@@ -97,11 +105,4 @@ export default {
 </script>
 
 <style scoped>
-.text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: -0.015625em;
-}
 </style>
-
-<navbar />

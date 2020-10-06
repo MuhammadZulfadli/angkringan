@@ -4,20 +4,25 @@
     <!-- minuman -->
     <v-container>
       <v-row>
-        <v-col v-for="card in minuman" :key="card.id" cols="12" md="4" sm="6">
-          <v-card class="pa-2" outlined shaped>
+        <v-col v-for="card in minuman" :key="card.id" cols="12" md="3" sm="6">
+          <v-card
+            @click="addItemToCard(card), (snackbar = true)"
+            class="pa-2"
+            outlined
+          >
+            <v-card-title class="text-item">{{ card.item }}</v-card-title>
             <v-img
               :src="card.src"
-              class="white--text align-end"
+              class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
-              @click="addItemToCard(card), (snackbar = true)"
             >
-              <v-card-title class="text">{{ card.item }}</v-card-title>
             </v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-card-title class="text">Rp. {{ card.harga }}</v-card-title>
+              <v-card-title class="text-price"
+                >Rp. {{ card.harga }}
+              </v-card-title>
             </v-card-actions>
             <v-snackbar
               v-model="snackbar"
@@ -39,7 +44,7 @@
             </v-snackbar>
             <v-btn
               @click="addItemToCard(card), (snackbar = true)"
-              class="rounded-br-xl text-capitalize"
+              class="rounded-xl text-capitalize"
               color="white--text orange darken-4"
               width="100%"
               >Pesan</v-btn
@@ -51,19 +56,25 @@
     <!-- Makanan -->
     <v-container class="my-5">
       <v-row>
-        <v-col v-for="card in makanan" :key="card.id" cols="12" md="4" sm="6">
-          <v-card @click="addItemToCard(card)" class="pa-2" outlined shaped>
+        <v-col v-for="card in makanan" :key="card.id" cols="12" md="3" sm="6">
+          <v-card
+            @click="addItemToCard(card), (snackbar = true)"
+            class="pa-2"
+            outlined
+          >
+            <v-card-title class="text-item">{{ card.item }}</v-card-title>
             <v-img
               :src="card.src"
-              class="white--text align-end"
+              class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
-              <v-card-title class="text">{{ card.item }}</v-card-title>
             </v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-card-title class="text">Rp. {{ card.harga }}</v-card-title>
+              <v-card-title class="text-price"
+                >Rp. {{ card.harga }}</v-card-title
+              >
             </v-card-actions>
             <!-- Snackbar -->
             <v-snackbar
@@ -86,8 +97,8 @@
             </v-snackbar>
             <!-- Order Button -->
             <v-btn
-              @click="addItemToCard(card)"
-              class="rounded-br-xl text-capitalize"
+              @click="addItemToCard(card), (snackbar = true)"
+              class="rounded-xl text-capitalize"
               color="white--text orange darken-4"
               width="100%"
               >Pesan</v-btn
@@ -96,11 +107,14 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <!-- <BottomNav /> -->
   </div>
 </template>
 
 <script>
 import Navigation from "@/components/Navigation";
+// import BottomNav from "@/components/BottomNav";
 import { mapActions } from "vuex";
 export default {
   name: "Home",
@@ -109,11 +123,12 @@ export default {
       snackbar: false,
       text: "Yeay! Success add to cart",
       timeout: 2000,
-      y: "top",
+      y: "top"
     };
   },
   components: {
-    Navigation,
+    Navigation
+    // BottomNav
   },
   computed: {
     minuman() {
@@ -121,18 +136,12 @@ export default {
     },
     makanan() {
       return this.$store.getters.getData;
-    },
+    }
   },
   methods: {
-    ...mapActions(["addItemToCard"]),
-  },
+    ...mapActions(["addItemToCard"])
+  }
 };
 </script>
 
-<style scoped>
-.text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: -0.015625em;
-}
-</style>
+
