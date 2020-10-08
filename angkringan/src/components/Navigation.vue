@@ -6,9 +6,15 @@
         <v-btn icon class="pink--text" @click="drawer = true">
           <v-icon>mdi-menu</v-icon>
         </v-btn>
-        <v-toolbar-title>
-          <span>Angkringan 4.0</span>
-        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-text-field
+          prepend-inner-icon="mdi-magnify"
+          hide-details
+          v-model="message"
+          label="Nasi Kucing"
+          dense
+          outlined
+        ></v-text-field>
         <v-spacer></v-spacer>
         <div>
           <v-btn icon class=" button-cart" color="grey" to="/cart">
@@ -36,7 +42,6 @@
     </v-container>
 
     <!-- Desktop -->
-
     <v-container class="d-none d-sm-flex d-md-none d-lg-flex">
       <v-app-bar elevation app flat color="white">
         <v-toolbar-title>
@@ -61,15 +66,15 @@
       </v-app-bar>
     </v-container>
 
-    <v-container>
+    <v-container class="d-none d-sm-flex d-md-none d-lg-flex">
       <div class="d-flex justify-space-between">
         <!-- Search -->
         <v-text-field
           prepend-inner-icon="mdi-magnify"
           v-model="message"
-          class="mx-3"
-          label="Nasi Kucing, Teh Anget, Etc"
+          label="Nasi Kucing"
           outlined
+          dense
         ></v-text-field>
       </div>
     </v-container>
@@ -117,6 +122,7 @@ export default {
 }
 
 .v-application p {
+  margin: auto;
   font-size: 30px;
   text-align: center;
   color: #1e304d;
@@ -128,5 +134,9 @@ export default {
   overflow: inherit;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.search-bar {
+  margin: auto;
 }
 </style>>
