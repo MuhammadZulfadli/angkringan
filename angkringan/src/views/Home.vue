@@ -5,17 +5,14 @@
     <v-container>
       <v-row>
         <v-col v-for="card in minuman" :key="card.id" cols="12" md="3" sm="6">
-          <v-card
-            @click="addItemToCard(card), (snackbar = true)"
-            class="pa-2"
-            outlined
-          >
+          <v-card class="pa-2 rounded-xl card-hover" outlined>
             <v-card-title class="text-item">{{ card.item }}</v-card-title>
             <v-img
+              @click="addItemToCard(card), (snackbar = true)"
               :src="card.src"
               class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
+              height="180px"
             >
             </v-img>
             <v-card-actions>
@@ -57,17 +54,14 @@
     <v-container class="my-5">
       <v-row>
         <v-col v-for="card in makanan" :key="card.id" cols="12" md="3" sm="6">
-          <v-card
-            @click="addItemToCard(card), (snackbar = true)"
-            class="pa-2"
-            outlined
-          >
+          <v-card class="pa-2 rounded-xl card-hover" outlined>
             <v-card-title class="text-item">{{ card.item }}</v-card-title>
             <v-img
+              @click="addItemToCard(card), (snackbar = true)"
               :src="card.src"
               class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
+              height="180px"
             >
             </v-img>
             <v-card-actions>
@@ -107,28 +101,24 @@
         </v-col>
       </v-row>
     </v-container>
-
-    <!-- <BottomNav /> -->
   </div>
 </template>
 
 <script>
 import Navigation from "@/components/Navigation";
-// import BottomNav from "@/components/BottomNav";
 import { mapActions } from "vuex";
 export default {
   name: "Home",
   data() {
     return {
       snackbar: false,
-      text: "Yeay! Success add to cart",
+      text: "Ditambahkan ke keranjang",
       timeout: 2000,
       y: "top"
     };
   },
   components: {
     Navigation
-    // BottomNav
   },
   computed: {
     minuman() {

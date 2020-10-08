@@ -9,17 +9,14 @@
           cols="12"
           md="3"
         >
-          <v-card class="pa-2 rounded-xl" outlined>
-            <v-card-title
-              @click="addItemToCard(makanan), (snackbar = true)"
-              class="text-item"
-              >{{ makanan.item }}</v-card-title
-            >
+          <v-card class="pa-2 rounded-xl card-hover" outlined>
+            <v-card-title class="text-item">{{ makanan.item }}</v-card-title>
             <v-img
+              @click="addItemToCard(makanan), (snackbar = true)"
               :src="makanan.src"
               class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
+              height="180px"
             >
             </v-img>
             <v-card-actions>
@@ -69,7 +66,7 @@ export default {
   data() {
     return {
       snackbar: false,
-      text: "Yeay! Success add to cart",
+      text: "Ditambahkan ke keranjang",
       timeout: 2000,
       y: "top"
     };

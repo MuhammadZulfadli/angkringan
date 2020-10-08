@@ -4,17 +4,14 @@
     <v-container>
       <v-row>
         <v-col v-for="mn in filteredResources()" :key="mn.id" cols="12" md="3">
-          <v-card
-            @click="addItemToCard(mn), (snackbar = true)"
-            class="pa-2 rounded-xl"
-            outlined
-          >
+          <v-card class="pa-2 rounded-xl card-hover" outlined>
             <v-card-title class="text-item">{{ mn.item }}</v-card-title>
             <v-img
+              @click="addItemToCard(mn), (snackbar = true)"
               :src="mn.src"
               class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
+              height="180px"
             >
             </v-img>
             <v-card-actions>
@@ -41,7 +38,7 @@
             </v-snackbar>
             <v-btn
               @click="addItemToCard(mn), (snackbar = true)"
-              color="white--text deep-orange"
+              color="white--text orange darken-4"
               class="rounded-xl text-capitalize"
               width="100%"
               >Pesan</v-btn
@@ -61,7 +58,7 @@ export default {
   data() {
     return {
       snackbar: false,
-      text: "Yeay! Success add to cart",
+      text: "Ditambahkan ke keranjang",
       timeout: 2000,
       y: "top"
     };
