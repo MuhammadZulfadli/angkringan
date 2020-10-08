@@ -309,6 +309,9 @@ export default new Vuex.Store({
     addNotesToCard({ commit, id }) {
       commit("addKeterangan", id);
     },
+    showNotification({ commit }) {
+      commit("notification");
+    },
   },
   mutations: {
     updateMessage(state, payload) {

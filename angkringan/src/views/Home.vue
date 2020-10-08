@@ -8,7 +8,7 @@
           <v-card class="pa-2 rounded-xl card-hover" outlined>
             <v-card-title class="text-item">{{ card.item }}</v-card-title>
             <v-img
-              @click="addItemToCard(card), (snackbar = true)"
+              @click="addItemToCard(card), notification()"
               :src="card.src"
               class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -21,26 +21,8 @@
                 >Rp. {{ card.harga }}
               </v-card-title>
             </v-card-actions>
-            <v-snackbar
-              v-model="snackbar"
-              :timeout="timeout"
-              :top="y === 'top'"
-            >
-              {{ text }}
-
-              <template v-slot:action="{ attrs }">
-                <v-btn
-                  color="orange darken-4"
-                  text
-                  v-bind="attrs"
-                  @click="snackbar = false"
-                >
-                  Close
-                </v-btn>
-              </template>
-            </v-snackbar>
             <v-btn
-              @click="addItemToCard(card), (snackbar = true)"
+              @click="addItemToCard(card), notification()"
               class="rounded-xl text-capitalize"
               color="white--text orange darken-4"
               width="100%"
@@ -57,7 +39,7 @@
           <v-card class="pa-2 rounded-xl card-hover" outlined>
             <v-card-title class="text-item">{{ card.item }}</v-card-title>
             <v-img
-              @click="addItemToCard(card), (snackbar = true)"
+              @click="addItemToCard(card), notification()"
               :src="card.src"
               class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -70,28 +52,9 @@
                 >Rp. {{ card.harga }}</v-card-title
               >
             </v-card-actions>
-            <!-- Snackbar -->
-            <v-snackbar
-              v-model="snackbar"
-              :timeout="timeout"
-              :top="y === 'top'"
-            >
-              {{ text }}
-
-              <template v-slot:action="{ attrs }">
-                <v-btn
-                  color="orange darken-4"
-                  text
-                  v-bind="attrs"
-                  @click="snackbar = false"
-                >
-                  Close
-                </v-btn>
-              </template>
-            </v-snackbar>
             <!-- Order Button -->
             <v-btn
-              @click="addItemToCard(card), (snackbar = true)"
+              @click="addItemToCard(card), notification()"
               class="rounded-xl text-capitalize"
               color="white--text orange darken-4"
               width="100%"
@@ -110,15 +73,10 @@ import { mapActions } from "vuex";
 export default {
   name: "Home",
   data() {
-    return {
-      snackbar: false,
-      text: "Ditambahkan ke keranjang",
-      timeout: 2000,
-      y: "top"
-    };
+    return {};
   },
   components: {
-    Navigation
+    Navigation,
   },
   computed: {
     minuman() {
@@ -126,12 +84,18 @@ export default {
     },
     makanan() {
       return this.$store.getters.getData;
-    }
+    },
+    notification() {
+      return this.$toast.success("Item ditambahkan ke keranjang", {
+        position: "top-right",
+        type: "success",
+        duration: 2000,
+        dismissable: true,
+      });
+    },
   },
   methods: {
-    ...mapActions(["addItemToCard"])
-  }
+    ...mapActions(["addItemToCard"]),
+  },
 };
 </script>
-
-

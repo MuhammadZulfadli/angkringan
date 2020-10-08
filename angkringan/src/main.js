@@ -5,6 +5,13 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 import "./assets/style.css";
 
+import VueToast from "vue-toast-notification";
+// Import one of available themes
+import "vue-toast-notification/dist/theme-default.css";
+//import 'vue-toast-notification/dist/theme-sugar.css';
+
+Vue.use(VueToast);
+
 Vue.config.productionTip = false;
 
 new Vue({

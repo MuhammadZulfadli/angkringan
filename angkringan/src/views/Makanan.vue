@@ -12,7 +12,7 @@
           <v-card class="pa-2 rounded-xl card-hover" outlined>
             <v-card-title class="text-item">{{ makanan.item }}</v-card-title>
             <v-img
-              @click="addItemToCard(makanan), (snackbar = true)"
+              @click="addItemToCard(makanan), notification()"
               :src="makanan.src"
               class="white--text align-end rounded-xl"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -25,24 +25,9 @@
                 >Rp. {{ makanan.harga }}</v-card-title
               >
             </v-card-actions>
-            <v-snackbar
-              v-model="snackbar"
-              :timeout="timeout"
-              :top="y === 'top'"
-            >
-              {{ text }}
-              <template v-slot:action="{ attrs }">
-                <v-btn
-                  color="orange darken-4"
-                  text
-                  v-bind="attrs"
-                  @click="snackbar = false"
-                  >Close</v-btn
-                >
-              </template>
-            </v-snackbar>
+
             <v-btn
-              @click="addItemToCard(makanan), (snackbar = true)"
+              @click="addItemToCard(makanan), notification()"
               class="rounded-xl text-capitalize"
               color="white--text orange darken-4"
               width="100%"
@@ -61,15 +46,10 @@ import { mapActions } from "vuex";
 export default {
   name: "Makanan",
   components: {
-    Navigation
+    Navigation,
   },
   data() {
-    return {
-      snackbar: false,
-      text: "Ditambahkan ke keranjang",
-      timeout: 2000,
-      y: "top"
-    };
+    return {};
   },
   computed: {
     makanans() {
@@ -80,26 +60,33 @@ export default {
     },
     idr() {
       return this.$store.getters.idr;
-    }
+    },
   },
   methods: {
     ...mapActions(["addItemToCard"]),
     filteredResources() {
       if (this.searchQuery) {
         // console.log(this.searchQuery)
-        return this.makanans.filter(items => {
+        return this.makanans.filter((items) => {
           return this.searchQuery
             .toLowerCase()
             .split(" ")
-            .every(v => items.item.toLowerCase().includes(v));
+            .every((v) => items.item.toLowerCase().includes(v));
         });
       } else {
         return this.makanans;
       }
-    }
-  }
+    },
+    notification() {
+      return this.$toast.success("Item ditambahkan ke keranjang", {
+        position: "top-right",
+        type: "success",
+        duration: 2000,
+        dismissable: true,
+      });
+    },
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
